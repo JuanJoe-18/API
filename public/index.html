@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Crossword Puzzle</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	
+	
+	
+	<body>
+		<div>
+			<h1>Crucigrama</h1>
+			<label for="sizeInput">Tamaño del tablero:</label>
+			<input type="number" id="sizeInput" value="10" min="5" max="20">
+			<button id="btnGenerar">Generar Tablero</button>
+			<div id="tab-cont"></div>
+		</div>
+		
+		<div id="pistas">
+			<h2>Pistas</h2>
+			<h3>Horizontales</h3>
+			<ul id="lista-across"></ul>
+			<h3>Verticales</h3>
+			<ul id="lista-down"></ul>
+		</div>
+		<script src="index.js"></script>
+		
+		<h1>Prueba de API</h1>
+		
+		<script>
+			fetch("http://localhost:5000/api/test-words")
+				.then(res => res.json())
+				.then(data => {
+					console.log("Palabras recibidas:", data);
+				})
+				.catch(err => {
+					console.error("Error al traer palabras:", err);
+				});
+		</script>
+	</body>
+	</body>
+</html>
+
+
